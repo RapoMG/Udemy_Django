@@ -6,9 +6,20 @@ from .models import Main
 
 def home(request):
 
-    return render(request, 'front/home.html')
+    site = Main.objects.filter(pk=1)
+
+    return render(request, 'front/home.html', {'site': site})
+
+
+    '''
+    # use variable to send string  to master page (must add this variable in master header too)
+    sitename = "MySite | Home"
+
+    return render(request, 'front/home.html', {'sitename': sitename})
+    '''
 
 
 def about(request):
+    sitename = "MySite | About"
 
     return render(request, 'front/about.html')
