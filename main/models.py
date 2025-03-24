@@ -10,6 +10,13 @@ class Main(models.Model):
     # about = models.TextField(default="-") # default ads string that will fill field when its created.
     about = models.TextField()
 
-    # add name field for created objects
+    # social media
+    fb = models.TextField(default="value")
+    tw = models.TextField(default="value")
+    yt = models.TextField(default="value")
+
+
+
+    # add name field for created objects in administration module
     def __str__(self):
         return self.name
