@@ -20,6 +20,6 @@ def home(request):
 
 
 def about(request):
-    sitename = "MySite | About"
+    site = Main.objects.get(pk=1)
 
-    return render(request, 'front/about.html')
+    return render(request, 'front/about.html', {'site': site})
